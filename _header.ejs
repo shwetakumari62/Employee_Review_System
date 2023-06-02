@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/css/_header.css" type="text/css" />
+
+
+<div>
+    <div class="menu">
+         <ul>
+            <% if(locals.user){ %>
+                <li><a href="/user/home">Home</a></li>
+                <% if(locals.user && locals.user.admin){ %>
+                    <li><a href="/admin/addEmployee">Add Employee</a></li>
+                    <li><a href="/admin/review"> Reviews</a></li>
+                <% } %>
+                <li><a href="/user/profile/<%= locals.user._id %>"><%= locals.user.name %> </a></li>
+                <li><a href="/user/logout">Logout </a></li>
+            <% } else{ %>
+            <li><a href="/">ERS</a></li>
+            <li><a href="/signInPage">SignIn</a></li>
+            <li><a href="/signUpPage">SignUp</a></li>
+            <% } %>
+         </ul>
+     </div>
+
+    </div>

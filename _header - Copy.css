@@ -1,0 +1,22 @@
+.menu {
+  float: right;
+  list-style: none;
+  padding: 10px;
+  z-index: 10; }
+  .menu ul {
+    display: flex;
+    justify-content: center; }
+    .menu ul li {
+      display: inline-block; }
+      .menu ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 20px;
+        font-family: "poppins", sans-serif;
+        font-size: 20px;
+        text-transform: capitalize; }
+        .menu ul li a:hover {
+          color: #c78bff; }
+        .menu ul li a img {
+          height: 40px;
+          width: 40px; }

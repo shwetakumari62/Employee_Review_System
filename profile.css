@@ -1,0 +1,183 @@
+body {
+  background: linear-gradient(#141e30, #243b55); }
+
+#dashboard {
+  margin-top: 8px;
+  margin-left: 5px;
+  word-spacing: 5px;
+  padding: 5px; }
+  #dashboard .fa-house-user {
+    color: white; }
+
+.summary-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 10px;
+  background-color: #3848c5;
+  height: 30px;
+  width: 90%;
+  max-width: 1060px;
+  margin-left: 40px;
+  margin-top: 40px; }
+  .summary-container img {
+    height: 25px;
+    width: 25px; }
+
+.every-detail-container {
+  width: 88.7%;
+  max-width: 1050px;
+  padding: 10px;
+  margin-left: 40px;
+  border: 2px solid white;
+  border-top: none; }
+
+.about-status-container {
+  display: flex; }
+  .about-status-container .about-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 50%; }
+    .about-status-container .about-container .avatar {
+      padding-left: 15px;
+      display: flex;
+      flex-direction: column; }
+      .about-status-container .about-container .avatar img {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%; }
+      .about-status-container .about-container .avatar a {
+        margin-top: 10px;
+        color: white;
+        text-decoration: none; }
+        .about-status-container .about-container .avatar a button {
+          border-radius: 1.8rem;
+          padding: 5px;
+          border: none;
+          background: linear-gradient(0deg, #53b9f5 0%, #508fdf 100%); }
+    .about-status-container .about-container .details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: -20px; }
+      .about-status-container .about-container .details h2 {
+        color: #f93939; }
+      .about-status-container .about-container .details p {
+        margin-top: -10px;
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: capitalize; }
+        .about-status-container .about-container .details p span {
+          font-weight: 400; }
+
+.status-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  justify-content: center; }
+  .status-container div {
+    display: flex;
+    align-items: center;
+    margin-left: 15px; }
+    .status-container div img {
+      height: 30px;
+      width: 30px; }
+    .status-container div p {
+      padding-left: 5px;
+      font-size: 15px;
+      text-transform: capitalize; }
+      .status-container div p span {
+        font-weight: 800; }
+
+#bottom-box {
+  display: flex; }
+  #bottom-box .bottom {
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-family: monospace;
+    font-size: 20px; }
+  #bottom-box .task-ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    margin-left: 30px;
+    height: 300px;
+    overflow: scroll; }
+    #bottom-box .task-ul a {
+      color: white;
+      text-decoration: none;
+      letter-spacing: 1px; }
+    #bottom-box .task-ul div {
+      border: 1px solid rgba(140, 50, 201, 0.459);
+      margin-bottom: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
+      border-radius: 1.8rem; }
+      #bottom-box .task-ul div:hover {
+        transform: scale(1.02); }
+      #bottom-box .task-ul div p {
+        margin: 0;
+        width: 60%;
+        text-align: left;
+        padding: 5px; }
+      #bottom-box .task-ul div span {
+        font-weight: bold;
+        width: 20%;
+        text-align: center; }
+      #bottom-box .task-ul div img {
+        height: 30px;
+        width: 30px;
+        margin-left: 10px; }
+
+#bottom-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%; }
+
+#bottom-right {
+  padding: 20px;
+  width: 40%; }
+  #bottom-right div h2 {
+    text-align: center;
+    text-transform: capitalize; }
+  #bottom-right div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* 1 */ }
+    #bottom-right div form textarea {
+      height: 50px;
+      width: 250px; }
+    #bottom-right div form input {
+      padding: 10px;
+      border: none;
+      height: 10px;
+      width: 200px;
+      font-weight: 600;
+      text-transform: capitalize; }
+    #bottom-right div form input:focus {
+      background-color: transparent;
+      color: white; }
+    #bottom-right div form .custom-btn {
+      width: 150px;
+      height: 40px;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 25px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+      box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+      outline: none; }
+    #bottom-right div form .btn-1 {
+      background: linear-gradient(0deg, #7144b8 0%, #38a6e1 100%);
+      border: none; }

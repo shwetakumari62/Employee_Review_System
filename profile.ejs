@@ -1,0 +1,153 @@
+<link rel="stylesheet" href="/css/profile.css" type="text/css" />
+
+
+
+<h1 id="dashboard"><a href="/user/home"><i class="fa-solid fa-house-user"></i></a> Dashboard </h1>
+
+<section id="profile-section">
+
+<div id="top-box">
+<div class="summary-container">
+    <img src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png" alt="">
+    <p>Summary</p>
+</div>
+<div class="every-detail-container">
+    <div class="about-status-container">
+        <div class="about-container">
+            <div class="avatar" >
+                <img src="https://cdn-icons-png.flaticon.com/128/3237/3237472.png" alt="">
+                <% if(locals.user.admin){ %>
+                    <% if(locals.user.id == profile.id){ %>
+                
+                    <% }else if(profile.admin){ %>
+                        <a href="/admin/changeAdmin/<%= profile._id %>"><button>Remove Admin</button></a>
+                    <% }else{ %>
+                        <a href="/admin/changeAdmin/<%= profile._id %>"><button>Make Admin</button></a>
+                    <% } %>
+                <% } %>
+
+            </div>
+            <div class="details" >
+                <h2><%= profile.name %></h2>
+                <p>Occupation : <span><%= profile.role %></span></p>
+                <p>Department : <span><%= profile.department %></span></p>
+            </div>
+        </div>
+
+        <div class="status-container">
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/3214/3214721.png" alt="">
+                    <p>Task Assinged : <span><%= profile.task.length %></span></p>
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/1632/1632670.png" alt="">
+                    <p>Task Completed : <span>10</span></p>
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/2246/2246636.png" alt="">
+                    <p>Task Incomplete : <span>6</span></p>
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/2716/2716350.png" alt="">
+                    <p>Performance : <span><%= profile.performance %></span></p>
+                </div>
+        </div>
+    </div>
+    <div>
+    </div>
+</div>
+</div>
+
+<div id="bottom-box">
+<div id="bottom-left">
+    <div class="summary-container bottom">
+        <img src="https://cdn-icons-png.flaticon.com/128/4245/4245736.png" alt="">
+        <p>Assinged Task</p>
+    </div>
+    <div>
+        <ul class="task-ul" >
+            <% if(profile.task.length > 0){ %>
+                <% for( i of profile.task){ %>
+                    <div>
+                        <p><%= i.task.name %></p>
+                        <p> rating : <span>4/5</span></p>
+                        <% if( locals.user.admin){ %>
+                            <% if(i.task.status){ %>
+                                <a href="/admin/changeStatus/<%= i._id %>"> 
+                                    <img src="https://cdn-icons-png.flaticon.com/128/8367/8367496.png" alt="">Change Status
+                                </a>
+                            <% }else{ %>
+                                <a href="/admin/changeStatus/<%= i._id %>">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/9283/9283071.png" alt="">Change Status
+                                </a>
+                            <% } %>
+                            <a href="/admin/removeTask/<%= i._id %>/<%= profile._id %>"><img src="https://cdn-icons-png.flaticon.com/128/9299/9299467.png" alt="">Delete</a>
+                        <% }else{ %>
+
+                            <% if(i.task.status){ %>
+                                <a> 
+                                    <img src="https://cdn-icons-png.flaticon.com/128/8367/8367496.png" alt="">Status
+                                </a>
+                            <% }else{ %>
+                                <a>                               <img src="https://cdn-icons-png.flaticon.com/128/9283/9283071.png" alt="">Status
+                                </a>
+                            <% } %>
+                        <%} %>
+                    </div>
+                <% } %>
+            <% }else { %>
+                <h1 style="text-align: center;">Not Assinged Task Yet !</h1>
+            <% } %>
+        </ul>
+    </div>
+</div>
+<% if(locals.user && locals.user.admin){ %>
+    <div id="bottom-right">
+        <div>
+            <h2>Assign task to <%= profile.name %></h2>
+            <form action="/admin/addTask/<%= profile.id %>" method="post">
+                <input type="text" name="task" placeholder="assign task to Employee">
+                <input type="hidden" placeholder="assing task to johndoe">
+                <button class="custom-btn btn-1">Assign Task <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+        </div>
+        <div>
+            <h2>update</h2>
+            <form action="/admin/update/<%= profile.id %>" method="post">
+                <input name="employeeid" type="hidden" placeholder="change employee Role" required>
+                <input name="role" type="text" placeholder="change employee Role" required>
+                <input name="department" type="text" placeholder="change employee Department" required>
+                <input name="performance" type="text" placeholder="Mark employee Performance" required>
+                <button class="custom-btn btn-1">Update <i class="fa-solid fa-pen-to-square"></i></button>
+
+            </form>
+        </div>
+    </div>
+<% } %>
+<div>
+    
+</div>
+<% for (review of locals.user.feedback) { %>
+    <% if(review == profile._id){ %>
+        <div id="bottom-right">
+            <div>
+                <h2>Submit your Review to <%= profile.name %></h2>
+                <form action="/user/feedback/<%= profile.id %>" method="post">
+                    <textarea type="text" name="feedback" placeholder="write your review here" required ></textarea>
+                    <input type="hidden" placeholder="assing task to johndoe">
+                    <button style="width:300px ;" class="custom-btn btn-1">Submit Feedback <i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+  <% } %>
+
+</div>
+
+</section>
+
+
+
+
+
+

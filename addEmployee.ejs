@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/css/addEmployee.css" type="text/css" />
+
+
+<div class="addemployee-container">
+    <h1> Add Employee</h1>
+    <form action="/admin/create" method="post">
+        <div class="box">
+            <i class="fa-solid fa-file-signature"></i>
+          <input type="text" name="name"   placeholder="Enter Employee Name" required>
+        </div>
+        <div class="box">
+            <i  class="fas fa-envelope"></i>
+            <input type="email" name="email"   placeholder="Enter Employee Email" required>
+          </div>
+          <div class="box">
+            <i  class="fas fa-key"></i>
+            <input type="password" name="password"   placeholder="Enter password" required>
+          </div>
+        <div class="box">
+          <i  class="fas fa-key"></i>
+          <input type="password" name="confirmPassword"  placeholder="Confirm Password" required>
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-computer"></i>
+            <input type="text" name="role"   placeholder="Enter Employee Role" required>
+          </div>
+        <div class="box">
+            <i class="fa-solid fa-building"></i>
+          <input type="text" name="department"  placeholder="Enter Department" required>
+        </div>
+        <button type="submit" id="btn">Add Employee</button>
+    </form>
+
+  </div>

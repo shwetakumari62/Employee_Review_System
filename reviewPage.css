@@ -1,0 +1,40 @@
+body {
+  background: linear-gradient(#141e30, #243b55); }
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  width: 80vw;
+  margin-left: 10%;
+  margin-right: 10%; }
+  .review-list .headings {
+    border: none !important; }
+    .review-list .headings:hover {
+      transform: scale(1) !important; }
+  .review-list div {
+    border: 1px solid rgba(140, 50, 201, 0.459);
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-radius: 1.8rem; }
+    .review-list div:hover {
+      transform: scale(1.02); }
+    .review-list div p {
+      margin: 0;
+      width: 60%;
+      text-align: left;
+      padding: 5px;
+      font-weight: 600;
+      font-size: 18px; }
+    .review-list div span {
+      font-weight: bold;
+      width: 20%;
+      text-align: center; }
+    .review-list div img {
+      height: 70px;
+      margin-left: 10px; }

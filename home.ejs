@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/home.css" type="text/css" />
+
+
+<div class="card-container">
+    <% for(i of allEmployee){ %>
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/128/1177/1177568.png" alt="Image">
+            <h3><%= i.name %></h3>
+            <p>Occupation : <span> <%= i.role %></span> </p>
+            <p>Department : <span> <%= i.department %></span> </p>
+            <a href="/user/profile/<%= i.id %>"><button>View Profile</button></a>
+            <% if(locals.user && locals.user.admin){ %>
+                <a href="/admin/remove/<%= i.id %>"><button>Remove Employee</button></a>
+                <form action="/admin/review/<%= i.id %>" method="post">
+                    <label for="">Put on review from </label>
+                    <select name="reviewer" >
+                        <% for(j of allEmployee){ %>
+                            <% if(j.id == i.id){ %>
+                            
+                            <% }else{ %>
+                                <option  value="<%= j.id %>"><%= j.name %></option>
+
+                            <% } %>
+                        <% } %>
+                    </select>
+                    <input name="tobereviewed" type="hidden" value="<%= i.id %>">
+                    <button>Assign Review</button>
+                </form>
+            <% } %>
+        </div>
+    <% } %>
+</div>

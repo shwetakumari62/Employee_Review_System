@@ -1,0 +1,70 @@
+body {
+  background: linear-gradient(#141e30, #243b55); }
+
+.card-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 80px; }
+  .card-container .card {
+    width: 250px;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    padding: 20px; }
+    .card-container .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover; }
+    .card-container .card h3 {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-transform: capitalize; }
+    .card-container .card p {
+      text-transform: capitalize;
+      font-size: 16px;
+      color: #555;
+      text-align: justify;
+      text-align: center; }
+    .card-container .card a button {
+      padding: 10px 20px;
+      background-color: #5685c7;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 20px;
+      cursor: pointer; }
+      .card-container .card a button:hover {
+        background-color: #555; }
+    .card-container .card form {
+      color: black;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: center; }
+      .card-container .card form label {
+        color: #e42b2b;
+        font-weight: 600;
+        letter-spacing: .5px; }
+      .card-container .card form select {
+        padding: 2px;
+        text-transform: capitalize; }
+      .card-container .card form button {
+        padding: 5px;
+        cursor: pointer;
+        font-weight: 700;
+        letter-spacing: .5px;
+        background-color: #e55f7f;
+        width: 100px;
+        border-radius: 1.8rem;
+        border: none;
+        color: white; }
